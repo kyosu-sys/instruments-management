@@ -60,7 +60,7 @@ class InstrumentsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $instrument = Instruments::findOrFail($id);
+        $instrument = Instrument::findOrFail($id);
         $instrument->update($request->all());
         return redirect()->route('instruments.index');
     }
@@ -71,7 +71,7 @@ class InstrumentsController extends Controller
     public function destroy(string $id)
     {
         $instrument = Instrument::findOrFail($id);
-        destroy($instrument);
+        $instrument->delete();
         return redirect()->route('instruments.index');
     }
 }

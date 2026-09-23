@@ -11,4 +11,4 @@ Route::get('/instruments/create', [InstrumentsController::class, 'create'])->nam
 Route::post('/instruments/create', [InstrumentsController::class, 'store'])->name('instruments.store');
 Route::get('/instruments/{id}/edit' , [InstrumentsController::class, 'edit'])->name('instruments.edit');
 Route::put('/instruments/{id}', [InstrumentsController::class, 'update'])->name('instruments.update');
-Route::delete('/instruments/{id}', [Instruments::class, 'destroy'])->name('instruments.destroy');
+Route::delete('/instruments/{id}', [InstrumentsController::class, 'destroy'])->name('instruments.destroy');
