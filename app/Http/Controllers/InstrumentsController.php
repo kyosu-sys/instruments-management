@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Instrument;
+use App\Http\Requests\InstrumentRequest;
 
 class InstrumentsController extends Controller
 {
@@ -30,9 +31,9 @@ class InstrumentsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(InstrumentRequest $request)
     {
-        $result = Instrument::create($request->all());
+        Instrument::create($request->validated());
         return redirect() -> route('instruments.index');
     }
 
@@ -58,10 +59,10 @@ class InstrumentsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(InstrumentRequest $request, string $id)
     {
         $instrument = Instrument::findOrFail($id);
-        $instrument->update($request->all());
+        $instrument->update($request->validated());
         return redirect()->route('instruments.index');
     }
 
