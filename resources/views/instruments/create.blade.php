@@ -7,7 +7,7 @@
     <title>instrument create</title>
 </head>
 <body>
-    <h1 class="max-w-lg mx-auto font-bold text-3xl rouded">計測器登録</h1>
+    <h1 class="max-w-lg mx-auto font-bold text-3xl">計測器登録</h1>
 
     <div class="max-w-lg mx-auto p-6 bg-white rounded shadow">
         <form action="{{ route('instruments.store') }}" method="POST">
