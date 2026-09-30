@@ -71,7 +71,7 @@
                 <label class="font-bold" for="register">計測器登録日</label>
                 <input class="w-full border border-gray-300 rounded p-2 hover:bg-blue-100" 
                 type="date" id="register" name="registered_at">
-                @error('registersd_at')
+                @error('registered_at')
                 <p class="text-red-500 text-sm mb-1">{{ $message }}</p>
                 @enderror
             </div>

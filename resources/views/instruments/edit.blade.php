@@ -12,6 +12,7 @@
     <div class="max-w-lg mx-auto p-6 bg-white rounded shadow">
         <form action="{{ route('instruments.update', $instrument->id ) }}" method="POST">
             @csrf
+            @method('PUT')
             
             <div class="mb-2">
                 <label class="font-bold" for="management_number">管理番号</label>
